@@ -88,7 +88,30 @@ int main()
 
 int moveMaxToFront(ListNode **ptrHead)
 {
-    /* add your code here */
+	// 이 함수는 int네. 왜 이중포인터를 썼을까? 지금은 굳이 깊게 파지 않아도 된다고 함  
+	// 가장 큰 걸 맨 앞으로 옮기고 그걸 return하는 함수 
+	// Head로 받아서 기존 함수를 못 씀 세상에. 포인터를 직접 조작? 
+
+	ListNode *cur = *ptrHead; //cur는 Head를 가리키는 포인터
+	ListNode *pre = NULL;
+	ListNode *maxPre = NULL;
+	int max = cur->item;
+
+	while (cur != NULL) {
+		if (cur->item > max) {
+			max = cur->item;
+			maxPre = pre;
+		}
+		pre = cur;
+		cur = cur->next;
+	}
+	// 현재 찾은 것 : 최대값과 그 앞 노드(중간일 경우 다리를 재설계해주기 위해)
+	// 다음으로 할 일 : 엣지케이스부터 정의하고 일반항 정의
+
+	// Edge Case : 맨 앞일 때 = 이떄 pre는 무엇을 가리키고 있을까? 
+	if pre
+	
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////
