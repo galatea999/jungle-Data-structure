@@ -121,19 +121,19 @@ int main()
  */
 void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
 {
-	// 아. 정렬 안 하고 합치기만 하면 되는구나!
+	// 아. 정렬 안 하고 합치기만 하면 되는구나!ㅌ 
 	//이거 링크드 리스트임
-	int pos =1; //ll1에서 삽입할 위치
+	int pos =1; //ll1에서 삽입할 위치 
 
 	while (ll2->size > 0) {
 		ListNode* temp = findNode(ll2, 0);
 		int val = temp ->item; //먼저 값 저장!
 		removeNode(ll2, 0); //메모리 free를 위해. 근데 여기서 temp가 가리키는 값이 free가 돼버리므로 미리 저장해주어야 함
 		insertNode(ll1, pos, val);
-		pos += 2;
+		pos += 2; 
 		if (pos > ll1->size) // 현재 코드상 ll2가 짧을때는 문제 없음
-		pos = ll1->size; // 그러나 ll1이 짧을때 예외처리
-
+		pos = ll1->size; // 그러나 ll1이 짧을때 예외처리 
+		
 	}
 
 }
