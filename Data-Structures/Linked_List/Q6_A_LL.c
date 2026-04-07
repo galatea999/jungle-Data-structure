@@ -97,6 +97,10 @@ int moveMaxToFront(ListNode **ptrHead)
 	ListNode *maxPre = NULL;
 	int max = cur->item;
 
+	//빈리스트일때 엣지케이스
+
+	if (*ptrHead ==NULL) return 0;
+	
 	while (cur != NULL) {
 		if (cur->item > max) {
 			max = cur->item;
@@ -109,8 +113,22 @@ int moveMaxToFront(ListNode **ptrHead)
 	// 다음으로 할 일 : 엣지케이스부터 정의하고 일반항 정의
 
 	// Edge Case : 맨 앞일 때 = 이떄 pre는 무엇을 가리키고 있을까? 
-	if pre
+	if (maxPre==NULL) {
+		return 1;
+	}
 	
+	//일반적인 케이스 (최대값이 중간에 있었을 경우) 
+	//1. Head 바꾸기
+	// 2. 기존 head가 next가 되게 이어주기 
+	//3. maxpre.next = max.next 연결 
+	// 순서를 뭐부터 해야하징?
+	
+	ListNode *maxNode = maxPre->next;
+	maxPre->next = maxNode->next; //3
+	maxNode->next = *ptrHead; //
+	*ptrHead = maxNode;
+		
+	return 1;
 
 }
 

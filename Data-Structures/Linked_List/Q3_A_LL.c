@@ -86,7 +86,25 @@ int main()
 
 void moveOddItemsToBack(LinkedList *ll)
 {
-	/* add your code here */
+	//ll이 나왔으니까, findNode랑 remove 머시기들 재활용이 가능하다는 마인드
+	//나는 일단 find insert remove를 쓸 수 있다. 나는 신이다.
+	//ll를 돌면서 홀수항을 찾으면, 바로 뒤로 뺌. 무한루프에 빠지는걸 막기 위해 size만큼만 돌아야 함.
+	//edge case : List자체가 비었을때, 짝수만 받았을때, 홀수만 받았을 때. 
+	ListNode *cur = ll->head;
+	int length = ll->size; //size 자체를 수정하면 안되기에 복사해놓자. 이런 식으로 int로 들고 오면 복사가 되나?
+	while (length > 0){
+
+		if (cur->item %2 ==1 ){
+			findNode()
+			removeNode()
+			insertNode()
+		}
+
+		cur = cur->next
+		length --
+
+	}
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
