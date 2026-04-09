@@ -91,17 +91,18 @@ void moveOddItemsToBack(LinkedList *ll)
 	//ll를 돌면서 홀수항을 찾으면, 바로 뒤로 뺌. 무한루프에 빠지는걸 막기 위해 size만큼만 돌아야 함.
 	//edge case : List자체가 비었을때, 짝수만 받았을때, 홀수만 받았을 때. 
 	ListNode *cur = ll->head;
-	int length = ll->size; //size 자체를 수정하면 안되기에 복사해놓자. 이런 식으로 int로 들고 오면 복사가 되나?
+	int length = ll->size; //size 자체를 수정하면 안되기에 복사해 놓자. 이런 식으로 int로 들고 오면 복사가 되나?
+	int index = 0;
 	while (length > 0){
 
-		if (cur->item %2 ==1 ){
-			findNode()
-			removeNode()
-			insertNode()
+		if (cur->item %2 ==1 ){ //홀수일때
+			findNode(ll, index); //해당 노드의 index
+			insertNode(ll, index, cur->item); //insert 먼저 하고 remove를 해야 원본이 안 사라질듯 
+			removeNode(ll, index);
 		}
-
-		cur = cur->next
-		length --
+		index ++;
+		cur = cur->next;
+		length --;
 
 	}
 
